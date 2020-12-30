@@ -64,55 +64,56 @@ const Header = () => {
             Chris Kim
           </Typography>
           <div>
-            {isMobile ? (
-              <>
-                <IconButton
-                  aria-label="mobile-hamburger-menu"
-                  aria-controls="hamburger-menu"
-                  aria-haspopup="true"
-                  onClick={handleMenu}
-                >
-                  <MenuIcon color="primary" />
-                </IconButton>
-                <Menu
-                  id="hamburger-menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={open}
-                  onClose={handleClose}
-                >
-                  {routes.map(route => (
-                    <MenuItem>
-                      {route.label}
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </>
-            ) : (
-              <>
-                {routes.map(route =>
-                  route.active == false
-                    ?
-                      <Tooltip title="Under construction">
-                        <span>
-                          <Button className="nav__button" disabled>
-                            {route.label}
-                          </Button>
-                        </span>
-                      </Tooltip>
-                    :
-                      <Button className="nav__buttton">{route.label}</Button>
-                )}
-              </>
-            )}
+            {isMobile
+              ?
+                <>
+                  <IconButton
+                    aria-label="mobile-hamburger-menu"
+                    aria-controls="hamburger-menu"
+                    aria-haspopup="true"
+                    onClick={handleMenu}
+                  >
+                    <MenuIcon color="primary" />
+                  </IconButton>
+                  <Menu
+                    id="hamburger-menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={open}
+                    onClose={handleClose}
+                  >
+                    {routes.map(route => (
+                      <MenuItem>
+                        {route.label}
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </>
+              :
+                <>
+                  {routes.map(route =>
+                    route.active == false
+                      ?
+                        <Tooltip title="Under construction">
+                          <span>
+                            <Button className="nav__button" disabled>
+                              {route.label}
+                            </Button>
+                          </span>
+                        </Tooltip>
+                      :
+                        <Button className="nav__buttton">{route.label}</Button>
+                  )}
+                </>
+            }
           </div>
         </Toolbar>
       </AppBar>
