@@ -1,0 +1,9 @@
+/* .spotify__text {
+    margin: 0;
+    top: 50%
+} */
+
+.spotify__image {
+    max-height: 100%;
+    max-width: 100%;
+}
