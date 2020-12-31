@@ -1,34 +1,29 @@
 /**
+ * This array is the `items` arary required by <ImageGallery />. See the
+ * following ---> https://github.com/xiaolin/react-image-gallery
+ *
+ * Gatsby also allows us to import assets directly into files as so.
  * https://www.gatsbyjs.com/docs/how-to/images-and-media/importing-assets-into-files/
+ *
+ * author: derek663@gmail.com
+ * last_updated: 12/31/2020
  */
 
-import CkFCC1 from '../../static/assets/ck_fcc_bw_2.jpg'
-import CkFCC2 from '../../static/assets/ck_fcc_bw.jpg'
-import CkFCC3 from '../../static/assets/ck_inears_fcc_3.jpg'
-import CkFCC4 from '../../static/assets/ck_jumping_fcc_bw.jpg'
-import CKWaymakerArt from '../../static/assets/ck_artisan.jpg';
-import CKHangar from '../../static/assets/ck_hangar_1.jpg'
+
+import CKFCC1 from  "../../static/assets/CK_FCC1.jpg"
+import CKGUITAR from "../../static/assets/CK_FCC_GUITAR.jpg"
+import CKFKO from "../../static/assets/2019_FKO_JUMP.jpg"
+
 
 const images = [
     {
-        'file': CkFCC3,
-        'legend': null
+        'original': CKFCC1
     },
     {
-        'file': CKHangar,
-        'legend': null
+        'original': CKGUITAR
     },
     {
-        'file': CkFCC1,
-        'legend': null
-    },
-    {
-        'file': CkFCC2,
-        'legend': null
-    },
-    {
-        'file': CkFCC4,
-        'legend': null
+        'original': CKFKO
     }
 ]
 
