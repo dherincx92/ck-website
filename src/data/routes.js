@@ -17,18 +17,18 @@ const routes = [
     position: 'left',
     routes : [
       {
+        label: 'HOME',
+        path: '/home',
+        active: true
+      },
+      {
         label: 'ABOUT',
         path: '/about',
-        active: true
+        active: false
       },
       {
         label: 'BLOG',
         path: '/blog',
-        active: false
-      },
-      {
-        label: 'HOME',
-        path: '/home',
         active: false
       }
     ]
