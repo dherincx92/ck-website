@@ -18,20 +18,24 @@ const color = 'white'
 
 const icons = [
     {
-        "icon":  <AiOutlineApple size={size} color={color}/>,
-        "route": null
+        // "icon":  <AiOutlineApple size={size} color={color}/>,
+        "route": "https://music.apple.com/us/artist/chris-kim/284067502",
+        "alias": "apple"
     },
     {
-        "icon":  <FiFacebook size={size} color={color}/>,
-        "route": `https://www.facebook.com/${SLUG}`
+        // "icon":  <FiFacebook size={size} color={color}/>,
+        "route": `https://www.facebook.com/${SLUG}`,
+        "alias": "facebook",
     },
     {
-        "icon":  <RiInstagramLine size={size} color={color}/>,
-        "route": `https://www.instagram.com/${SLUG}`
+        // "icon":  <RiInstagramLine size={size} color={color}/>,
+        "route": `https://www.instagram.com/${SLUG}`,
+        "alias": "instagram"
     },
     {
-        "icon":  <RiSpotifyLine size={size} color={color}/>,
-        "route": null
+        // "icon":  <RiSpotifyLine size={size} color={color}/>,
+        "route": "https://open.spotify.com/artist/1GhVaT8gelrWGHImqOdKex",
+        "alias": "spotify"
     }
 ]
 

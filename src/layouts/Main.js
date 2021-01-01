@@ -4,19 +4,22 @@
  */
 
 import React from "react";
-import Carousel from "../components/templates/Carousel";
+import ImageCarousel from "../components/Home/Carousel";
 import Header from "../components/templates/Header";
-import SpotifyPlayer from '../components/Player';
+import SpotifyPlayer from '../components/Home/Player';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Footer from '../components/templates/Footer';
 import theme from './theme';
+
 
 const Main = () => (
     <ThemeProvider theme={theme}>
         <CssBaseline>
             <Header />
-            {/* <Carousel />
-            <SpotifyPlayer /> */}
+            <ImageCarousel />
+            <SpotifyPlayer />
+            {/* <Footer /> */}
         </CssBaseline>
     </ThemeProvider>
 )

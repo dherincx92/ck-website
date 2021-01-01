@@ -6,27 +6,28 @@
  * last_updated: 12/30/2020
  */
 
-import React, { useState } from "react"
+import React, { useState } from "react";
+import { Link } from "gatsby";
 
 // 3rd party imports
-import { makeStyles } from "@material-ui/core/styles"
-import AppBar from "@material-ui/core/AppBar"
-import Box from "@material-ui/core/Box"
-import Button from "@material-ui/core/Button"
-import Grid from "@material-ui/core/Grid"
-import IconButton from "@material-ui/core/IconButton"
-import Menu from "@material-ui/core/Menu"
-import MenuIcon from "@material-ui/icons/Menu"
-import MenuItem from "@material-ui/core/MenuItem"
-import Toolbar from "@material-ui/core/Toolbar"
-import Tooltip from "@material-ui/core/Tooltip"
-import Typography from "@material-ui/core/Typography"
-import useMediaQuery from "@material-ui/core/useMediaQuery"
-import { useTheme } from "@material-ui/core/styles"
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import Menu from "@material-ui/core/Menu";
+import MenuIcon from "@material-ui/icons/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import Toolbar from "@material-ui/core/Toolbar";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
 
 // local imports
-import routes from "../../data/routes"
-import "../../../static/css/header.css"
+import routes from "../../data/routes";
+import "../../../static/css/header.css";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -36,6 +37,9 @@ const useStyles = makeStyles(() => ({
   title: {
     flexGrow: 1,
     color: "white",
+    fontWeight: "bold",
+    fontSize: "5.9vw",
+    textAlign: "center"
   },
 }))
 
@@ -49,7 +53,7 @@ const Header = () => {
   // theme is used in `usedMediaQuery` hook to determine our page size
   // and to automatically have React handle menu --> hamburger
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("xs"))
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
 
   const handleMenu = event => {
     setAnchorEl(event.currentTarget)
@@ -72,19 +76,23 @@ const Header = () => {
     return filteredRoutes.map(route =>
       route.active === false ? (
         <Box p={1}>
-          <Tooltip title="Coming soon!">
-            <span>
-              <Button className="nav__button" disabled>
-                {route.label}
-              </Button>
-            </span>
-          </Tooltip>
+            <Tooltip title="Coming soon!">
+              <span>
+                <Link to={route.active === false ? "/home" : route.path} disabled>
+                  <Button className="nav__button--disabled">
+                    {route.label}
+                  </Button>
+                </Link>
+              </span>
+            </Tooltip>
         </Box>
       ) : (
         <Box p={1}>
-          <Button className="nav__button" disabled={!route.active}>
-            {route.label}
-          </Button>
+          <Link to={route.path}>
+            <Button className="nav__button" disabled={!route.active}>
+              {route.label}
+            </Button>
+          </Link>
         </Box>
       )
     )
@@ -93,11 +101,7 @@ const Header = () => {
   // Generic function to create Chris Kim title text.
   const titleText = (text) => {
     return (
-      <Typography
-        variant="h6"
-        className={classes.title}
-        style={{ fontWeight: "bold", fontSize: "85px" }}
-      >
+      <Typography variant="h6" className={classes.title}>
         {text}
       </Typography>
     )
@@ -110,17 +114,21 @@ const Header = () => {
           <Grid container>
             {isMobile ? (
               <>
-              <Box p={1}>
+              <Box p={1}
+                display="flex"
+                justifyContent="center"
+                alignItems="center"
+              >
                 {titleText("Chris Kim")}
               </Box>
+              <Box flexGrow={1} textAlign="right">
                   <IconButton
                     aria-label="mobile-hamburger-menu"
                     aria-controls="hamburger-menu"
                     aria-haspopup="true"
                     onClick={handleMenu}
-                    disabled
                   >
-                    <MenuIcon color="primary" />
+                    <MenuIcon color="primary"/>
                   </IconButton>
                 <Menu
                   id="hamburger-menu-appbar"
@@ -141,6 +149,7 @@ const Header = () => {
                     <MenuItem>{route.label}</MenuItem>
                   ))}
                 </Menu>
+              </Box>
               </>
             ) : (
               <>

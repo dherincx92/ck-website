@@ -4,7 +4,7 @@
 html {
     background-color: #000000;
     font-family: 'Montserrat', sans-serif;
-    font-size: 35px;
+    font-size: 40px;
 }
 
 .title {
@@ -39,13 +39,11 @@ html {
     cursor: pointer;
 }
 
+.nav_button--disabled {
+    pointer-events: none;
+}
+
 .nav__button span:first-child {
     font-size: 20px;
     color: white;
 }
-
-
-
-
-
-

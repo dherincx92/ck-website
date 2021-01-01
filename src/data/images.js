@@ -14,7 +14,6 @@ import CKFCC1 from  "../../static/assets/CK_FCC1.jpg"
 import CKGUITAR from "../../static/assets/CK_FCC_GUITAR.jpg"
 import CKFKO from "../../static/assets/2019_FKO_JUMP.jpg"
 
-
 const images = [
     {
         'original': CKFCC1
